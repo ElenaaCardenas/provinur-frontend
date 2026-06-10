@@ -170,6 +170,7 @@ a {
 .section-title h2 {
   font-size: 3rem;
   margin-bottom: 15px;
+  color: #0f172a
 }
 
 .section-title p {
@@ -203,11 +204,13 @@ a {
 .service-content h3 {
   font-size: 2rem;
   margin-bottom: 20px;
+  color:#0f172a
 }
 
 .service-content p {
   line-height: 1.8;
   margin-bottom: 25px;
+  color: #0f172a;
 }
 
 .service-content button {
@@ -217,4 +220,56 @@ a {
   padding: 14px 30px;
   border-radius: 50px;
   cursor: pointer;
+}
+
+.contact-cta {
+  background: #0f172a;
+
+  color: white;
+
+  padding: 120px 10%;
+
+  text-align: center;
+}
+
+.contact-cta-content {
+  max-width: 900px;
+  margin: auto;
+}
+
+.contact-cta h2 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.contact-cta p {
+  font-size: 1.1rem;
+  margin-bottom: 40px;
+}
+
+.contact-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.whatsapp-btn {
+  background: #25d366;
+
+  color: white;
+
+  padding: 15px 30px;
+
+  border-radius: 50px;
+
+  text-decoration: none;
+
+  font-weight: 600;
+
+  transition: 0.3s;
+}
+
+.whatsapp-btn:hover {
+  transform: translateY(-3px);
 }
