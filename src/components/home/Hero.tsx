@@ -22,9 +22,9 @@ function Hero() {
               Solicitar Información
             </button>
 
-            <button className="secondary-btn">
+            <a href="#services" className="secondary-btn">
               Ver Servicios
-            </button>
+            </a>
           </div>
         </div>
       </div>
