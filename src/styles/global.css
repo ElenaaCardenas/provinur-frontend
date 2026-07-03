@@ -1,3 +1,19 @@
+:root{
+  /* Colores principales */
+  --primary: #123C7B;        /* Azul cobalto */
+  --primary-dark: #0B2E63;   /* Azul cobalto oscuro */
+  --secondary: #38BDF8;      /* Azul celeste */
+
+  /* Neutros */
+  --black: #111827;
+  --gray-dark: #4B5563;
+  --gray: #9CA3AF;
+  --gray-light: #F3F4F6;
+  --white: #FFFFFF;
+
+  /* Extras */
+  --success: #22C55E;
+}
 * {
   margin: 0;
   padding: 0;
@@ -6,8 +22,8 @@
 
 body {
   font-family: 'Poppins', sans-serif;
-  background-color: #0f172a;
-  color: #ffffff
+  background-color: var(--white);
+  color: var(--black);
 }
 
 a {
@@ -28,7 +44,7 @@ a {
 
   padding: 0 60px;
 
-  background: rgba(15, 23, 42, 0.85);
+  background: rgba(18, 60, 123, 0.90);
   backdrop-filter: blur(10px);
 
   z-index: 1000;
@@ -60,7 +76,7 @@ a {
 }
 
 .nav-links li:hover {
-  color: #e63946;
+  color: var(--secondary);
 }
 
 .hero {
@@ -132,11 +148,17 @@ a {
 
   border-radius: 50px;
 
-  background: #e63946;
+  background: var(--primary);
+  transition: .3s ease;
 
   color: white;
 
   cursor: pointer;
+}
+
+.primary-btn:hover{
+    background: var(--primary-dark);
+    transform: translateY(-2px);
 }
 
 .secondary-btn {
@@ -146,9 +168,9 @@ a {
 
   background: transparent;
 
-  border: 1px solid white;
-
-  color: white;
+  border:2px solid var(--secondary);
+  
+  color:var(--white);
 
   cursor: pointer;
 
@@ -157,8 +179,13 @@ a {
   display: inline-block;
 }
 
+.secondary-btn:hover{
+    background: var(--secondary);
+    color: var(--primary-dark);
+}
+
 .services {
-  background: #ffffff;
+  background:var(--gray-light);
   padding: 120px 10%;
 }
 
@@ -170,7 +197,7 @@ a {
 .section-title h2 {
   font-size: 3rem;
   margin-bottom: 15px;
-  color: #0f172a
+  color:var(--primary-dark);
 }
 
 .section-title p {
@@ -204,17 +231,17 @@ a {
 .service-content h3 {
   font-size: 2rem;
   margin-bottom: 20px;
-  color:#0f172a
+  color:var(--primary-dark);
 }
 
 .service-content p {
   line-height: 1.8;
   margin-bottom: 25px;
-  color: #0f172a;
+  color:var(--primary-dark);
 }
 
 .service-content button {
-  background: #e63946;
+  background:var(--primary);
   color: white;
   border: none;
   padding: 14px 30px;
@@ -222,8 +249,12 @@ a {
   cursor: pointer;
 }
 
+.service-content button:hover{
+    background:var(--primary-dark);
+}
+
 .contact-cta {
-  background: #0f172a;
+  background:var(--primary-dark);
 
   color: white;
 
@@ -298,7 +329,7 @@ a {
 }
 
 .about-tag {
-  color: #e63946;
+  color:var(--secondary);
   font-weight: 600;
   letter-spacing: 2px;
 }
@@ -334,9 +365,9 @@ a {
   justify-content: center;
 
   background: linear-gradient(
-    135deg,
-    #0f172a,
-    #1e293b
+  135deg,
+  var(--primary-dark),
+  var(--primary)
   );
 
   color: white;
@@ -384,22 +415,22 @@ a {
   border-radius: 20px;
 
   box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-  color: #0f172a;
+  color:var(--primary-dark);
 }
 
 .about-card h2 {
   margin-bottom: 20px;
-  color:#0f172a
+  color:var(--primary-dark);
 }
 
 .about-card ul {
   padding-left: 20px;
-  color: #0f172a;
+  color:var(--primary-dark);
 }
 
 .about-card li {
   margin-bottom: 10px;
-  color:#0f172a;
+  color:var(--primary-dark);
 }
 
 .mission-section {
@@ -422,4 +453,113 @@ a {
   margin: auto;
 
   line-height: 1.8;
+}
+.products-page{
+
+padding:140px 10% 80px;
+
+background:#f8fafc;
+
+min-height:100vh;
+
+}
+
+.products-page h1{
+
+font-size:3rem;
+
+margin-bottom:15px;
+
+}
+
+.products-page p{
+
+margin-bottom:50px;
+
+color:#555;
+
+}
+
+.products-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fill,minmax(300px,1fr));
+
+gap:35px;
+
+}
+
+.product-card{
+
+background:white;
+
+border-radius:20px;
+
+overflow:hidden;
+
+box-shadow:0 8px 25px rgba(0,0,0,.08);
+
+transition:.3s;
+
+}
+
+.product-card:hover{
+
+transform:translateY(-8px);
+
+}
+
+.product-card img{
+
+width:100%;
+
+height:240px;
+
+object-fit:cover;
+
+}
+
+.product-info{
+
+padding:25px;
+
+}
+
+.product-info span{
+
+color:var(--secondary);
+
+font-size:.9rem;
+
+font-weight:600;
+
+}
+
+.product-info h3{
+
+margin:15px 0;
+
+}
+
+.product-info button{
+
+margin-top:20px;
+
+background:var(--primary);
+
+color:white;
+
+border:none;
+
+padding:12px 25px;
+
+border-radius:30px;
+
+cursor:pointer;
+
+}
+
+.product-info button:hover{
+    background:var(--primary-dark);
 }
