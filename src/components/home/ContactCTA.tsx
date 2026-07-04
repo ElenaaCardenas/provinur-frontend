@@ -22,7 +22,7 @@ function ContactCTA() {
           </a>
 
           <a
-            href="https://wa.me/5210000000001"
+            href="https://wa.me/9621842040"
             target="_blank"
             rel="noreferrer"
             className="whatsapp-btn"
