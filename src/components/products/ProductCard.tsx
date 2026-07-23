@@ -1,34 +1,60 @@
+import { Link } from "react-router-dom";
+
 type ProductCardProps = {
-  image: string;
+  slug: string;
   name: string;
   brand: string;
   category: string;
+  image: string;
+  available: boolean;
 };
 
 function ProductCard({
-  image,
+  slug,
   name,
   brand,
   category,
+  image,
+  available,
 }: ProductCardProps) {
   return (
-    <div className="product-card">
+    <article className="product-card">
+      <div className="product-card-image">
+        <img
+          src={image}
+          alt={name}
+          loading="lazy"
+        />
 
-      <img src={image} alt={name} />
+        <span
+          className={`product-status ${
+            available ? "is-available" : "is-unavailable"
+          }`}
+        >
+          {available ? "Disponible" : "Consultar existencia"}
+        </span>
+      </div>
 
-      <div className="product-info">
-
-        <span>{category}</span>
+      <div className="product-card-content">
+        <p className="product-card-meta">
+          {brand} · {category}
+        </p>
 
         <h3>{name}</h3>
 
-        <p>{brand}</p>
+        <p className="product-card-description">
+          Consulta especificaciones técnicas, disponibilidad y opciones de
+          suministro.
+        </p>
 
-        <button>Ver detalle</button>
-
+        <Link
+          to={`/productos/${slug}`}
+          className="product-card-button"
+        >
+          Ver detalles
+        </Link>
       </div>
-
-    </div>
+    </article>
   );
 }
 

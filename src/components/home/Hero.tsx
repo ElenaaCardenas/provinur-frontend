@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+import "../../styles/hero.css";
+
 function Hero() {
   return (
     <section className="hero">
@@ -20,12 +22,18 @@ function Hero() {
 
           <div className="hero-buttons">
             <Link to="/contacto" className="primary-btn">
-                Solicitar cotización
+              Solicitar cotización
             </Link>
 
             <a href="#services" className="secondary-btn">
-              Ver Servicios
+              Ver servicios
             </a>
+          </div>
+
+          <div className="hero-benefits">
+            <span>Atención especializada</span>
+            <span>Soluciones a la medida</span>
+            <span>Cobertura nacional</span>
           </div>
         </div>
       </div>

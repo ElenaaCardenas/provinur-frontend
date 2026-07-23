@@ -8,6 +8,7 @@ import Contact from './pages/Contact';
 import DieselLab from './pages/DieselLab';
 import Metrology from './pages/Metrology';
 import SafetySupplies from './pages/SafetySupplies';
+import ProductDetail from "./pages/ProductDetail";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
       <Route path="/laboratorio-diesel" element={<DieselLab />} />
       <Route path="/metrologia" element={<Metrology />} />
       <Route path="/insumos-seguridad" element={<SafetySupplies />} />
+      <Route path="/productos/:slug" element={<ProductDetail />} />
     </Routes>
   </main>
   <Footer />
