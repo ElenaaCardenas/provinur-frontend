@@ -325,26 +325,7 @@ function Navbar() {
                     </small>
                   </span>
                 </Link>
-
-                <Link
-                  to="/insumos-seguridad"
-                  className="navbar-service-option"
-                >
-                  <span className="navbar-service-number">
-                    03
-                  </span>
-
-                  <span>
-                    <strong>
-                      Insumos Industriales
-                    </strong>
-
-                    <small>
-                      Suministros y soluciones para
-                      operación industrial
-                    </small>
-                  </span>
-                </Link>
+              
               </div>
             </li>
 
