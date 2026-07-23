@@ -110,11 +110,8 @@ function Navbar() {
     location.pathname.startsWith(
       '/laboratorio-diesel',
     ) ||
-    location.pathname.startsWith('/metrologia') ||
-    location.pathname.startsWith(
-      '/insumos-seguridad',
-    );
-
+    location.pathname.startsWith('/metrologia');
+    
   return (
     <header
       ref={navbarRef}
@@ -237,9 +234,7 @@ function Navbar() {
                 </Link>
 
                 <div className="navbar-dropdown-note">
-                  Las categorías se mostrarán aquí
-                  cuando conectemos el catálogo con el
-                  backend.
+                  
                 </div>
               </div>
             </li>
