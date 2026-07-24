@@ -1,0 +1,139 @@
+.metrology-page {
+  background: #ffffff;
+}
+
+.metrology-hero {
+  background:
+    linear-gradient(
+      rgba(6, 28, 54, 0.57),
+      rgba(6, 28, 54, 0.57)
+    ),
+    url("/images/metrology-hero.jpg")
+      center / cover no-repeat;
+}
+
+.metrology-introduction {
+  padding: 100px 0;
+  background: #ffffff;
+}
+
+.metrology-introduction__content {
+  width: min(
+    1180px,
+    calc(100% - 40px)
+  );
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(380px, 0.85fr);
+  gap: 75px;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.metrology-introduction__text > span {
+  display: inline-block;
+  margin-bottom: 15px;
+  color: #079ed8;
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 1.8px;
+}
+
+.metrology-introduction__text h2 {
+  margin: 0 0 25px;
+  color: #102f5b;
+  font-size: clamp(
+    2rem,
+    4vw,
+    3.2rem
+  );
+  line-height: 1.15;
+}
+
+.metrology-introduction__text p {
+  margin: 0 0 20px;
+  color: #5d6978;
+  font-size: 1.03rem;
+  line-height: 1.9;
+}
+
+.metrology-introduction__image {
+  min-height: 430px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 4px;
+  background:
+    linear-gradient(
+      135deg,
+      #edf1f4,
+      #d6dce2
+    );
+  color: #687687;
+  font-weight: 700;
+  text-align: center;
+}
+
+.metrology-brands-section {
+  background: #f4f6f8;
+}
+
+.metrology-contact-detail {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  margin-top: 18px;
+  color: #4c5b6d;
+}
+
+.metrology-contact-detail svg {
+  flex: 0 0 auto;
+  color: #079ed8;
+}
+
+.metrology-contact-detail a {
+  margin: 0;
+  color: #102f5b;
+  font-size: 1rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.metrology-contact-detail a:hover {
+  color: #079ed8;
+}
+
+.metrology-cta {
+  background: #102f5b;
+}
+
+@media (max-width: 900px) {
+  .metrology-introduction__content {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+
+  .metrology-introduction__image {
+    order: -1;
+    min-height: 350px;
+  }
+}
+
+@media (max-width: 600px) {
+  .metrology-introduction {
+    padding: 70px 0;
+  }
+
+  .metrology-introduction__content {
+    width: min(
+      100% - 28px,
+      1180px
+    );
+  }
+
+  .metrology-introduction__image {
+    min-height: 280px;
+  }
+}

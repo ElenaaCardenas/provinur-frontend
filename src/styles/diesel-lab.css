@@ -1,0 +1,597 @@
+.diesel-page {
+  width: 100%;
+  overflow-x: hidden;
+  background: #ffffff;
+  color: #17243a;
+}
+
+.diesel-hero {
+  position: relative;
+  min-height: 470px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    linear-gradient(
+      rgba(7, 28, 55, 0.58),
+      rgba(7, 28, 55, 0.58)
+    ),
+    url("/images/diesel-lab-hero.jpg")
+      center / cover no-repeat;
+}
+
+.diesel-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(8, 27, 53, 0.1),
+      rgba(8, 27, 53, 0.35)
+    );
+}
+
+.diesel-hero-content {
+  position: relative;
+  z-index: 1;
+  width: min(1100px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 90px 0;
+  color: #ffffff;
+  text-align: center;
+}
+
+.diesel-hero-content h1 {
+  margin: 0;
+  font-size: clamp(3rem, 7vw, 5.6rem);
+  line-height: 1;
+  letter-spacing: -2px;
+  text-transform: uppercase;
+}
+
+.diesel-hero-content p {
+  max-width: 820px;
+  margin: 30px auto 0;
+  font-size: clamp(1.05rem, 2vw, 1.45rem);
+  font-weight: 600;
+  line-height: 1.6;
+}
+
+.diesel-section {
+  width: min(1180px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 90px 0 110px;
+}
+
+.diesel-section-heading {
+  max-width: 850px;
+  margin: 0 auto 70px;
+  text-align: center;
+}
+
+.diesel-section-heading > span {
+  display: inline-block;
+  margin-bottom: 14px;
+  color: #069eda;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.diesel-section-heading h2 {
+  margin: 0;
+  color: #102f5b;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  line-height: 1.15;
+}
+
+.diesel-section-heading p {
+  max-width: 760px;
+  margin: 22px auto 0;
+  color: #5c6877;
+  font-size: 1.04rem;
+  line-height: 1.85;
+}
+
+.diesel-services-list {
+  display: grid;
+  gap: 100px;
+}
+
+.diesel-service-row {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(0, 1fr);
+  gap: 70px;
+  align-items: center;
+}
+
+.diesel-service-row--reverse
+.diesel-service-row__image {
+  order: 2;
+}
+
+.diesel-service-row--reverse
+.diesel-service-row__content {
+  order: 1;
+}
+
+.diesel-service-row__image {
+  min-height: 430px;
+  overflow: hidden;
+  border-radius: 4px;
+  background: #e9edf1;
+}
+
+.diesel-service-row__image img {
+  width: 100%;
+  height: 100%;
+  min-height: 430px;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.diesel-service-row:hover
+.diesel-service-row__image img {
+  transform: scale(1.025);
+}
+
+.diesel-service-row__placeholder {
+  min-height: 430px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    linear-gradient(
+      135deg,
+      #edf0f3,
+      #d6dce2
+    );
+  color: #697687;
+  font-weight: 700;
+}
+
+.diesel-service-row__content {
+  padding: 20px 10px;
+}
+
+.diesel-service-row__eyebrow {
+  display: inline-block;
+  margin-bottom: 14px;
+  color: #069eda;
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 1.7px;
+  text-transform: uppercase;
+}
+
+.diesel-service-row__content h3 {
+  margin: 0;
+  color: #102f5b;
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  line-height: 1.15;
+}
+
+.diesel-service-row__content p {
+  margin: 25px 0 32px;
+  color: #596778;
+  font-size: 1.06rem;
+  line-height: 1.9;
+}
+
+.diesel-service-row__button {
+  min-height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 25px;
+  border-radius: 2px;
+  background: #079ed8;
+  color: #ffffff;
+  font-size: 0.9rem;
+  font-weight: 800;
+  text-decoration: none;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.diesel-service-row__button:hover {
+  background: #087eb0;
+  transform: translateY(-2px);
+}
+
+.diesel-brands-section {
+  padding: 90px 40px;
+  background: #f4f6f8;
+}
+
+.diesel-brands-section
+.diesel-section-heading {
+  margin-bottom: 45px;
+}
+
+.diesel-brands-grid {
+  width: min(1100px, 100%);
+  display: grid;
+  grid-template-columns:
+    repeat(6, minmax(0, 1fr));
+  margin: 0 auto;
+  border-top: 1px solid #d8dee5;
+  border-left: 1px solid #d8dee5;
+}
+
+.diesel-brand-card {
+  min-height: 125px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  border-right: 1px solid #d8dee5;
+  border-bottom: 1px solid #d8dee5;
+  background: #ffffff;
+  color: #1b3b66;
+  font-weight: 800;
+}
+
+.diesel-benefits-section {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(340px, 0.7fr);
+  gap: 70px;
+  width: min(1180px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 100px 0;
+  align-items: center;
+}
+
+.diesel-benefits-content
+.diesel-eyebrow {
+  color: #079ed8;
+}
+
+.diesel-benefits-content h2 {
+  margin: 0;
+  color: #102f5b;
+  font-size: clamp(2rem, 4vw, 3.1rem);
+}
+
+.diesel-benefits-content > p {
+  margin: 22px 0 30px;
+  color: #5d6978;
+  line-height: 1.8;
+}
+
+.diesel-benefits-list {
+  display: grid;
+  gap: 18px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.diesel-benefits-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  color: #334155;
+}
+
+.diesel-benefits-list svg {
+  flex: 0 0 auto;
+  margin-top: 4px;
+  color: #079ed8;
+}
+
+.diesel-location-card {
+  padding: 45px;
+  border-top: 6px solid #079ed8;
+  background: #f4f6f8;
+}
+
+.diesel-location-card > span {
+  color: #079ed8;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 1.6px;
+}
+
+.diesel-location-card h3 {
+  margin: 15px 0;
+  color: #102f5b;
+  font-size: 2rem;
+}
+
+.diesel-location-card p {
+  color: #5d6978;
+  line-height: 1.8;
+}
+
+.diesel-location-card a {
+  display: inline-block;
+  margin-top: 10px;
+  color: #102f5b;
+  font-size: 1.15rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.diesel-cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+  padding: 75px max(40px, calc((100% - 1180px) / 2));
+  background: #102f5b;
+  color: #ffffff;
+}
+
+.diesel-cta > div {
+  max-width: 760px;
+}
+
+.diesel-cta span {
+  color: #55c8f4;
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 1.8px;
+}
+
+.diesel-cta h2 {
+  margin: 13px 0;
+  font-size: clamp(1.9rem, 4vw, 3rem);
+}
+
+.diesel-cta p {
+  margin: 0;
+  color: #d6e1ed;
+  line-height: 1.8;
+}
+
+.diesel-secondary-button {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50px;
+  padding: 13px 25px;
+  background: #079ed8;
+  color: #ffffff;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.diesel-services-status {
+  padding: 40px;
+  border: 1px solid #dce3ea;
+  background: #ffffff;
+  text-align: center;
+}
+
+.diesel-services-status h3 {
+  margin: 0 0 10px;
+  color: #102f5b;
+}
+
+.diesel-services-status p {
+  margin: 0;
+  color: #687382;
+  line-height: 1.7;
+}
+
+.diesel-services-status button {
+  margin-top: 20px;
+  padding: 12px 20px;
+  border: none;
+  background: #102f5b;
+  color: #ffffff;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.diesel-services-status--error {
+  border-left: 5px solid #b83232;
+}
+
+@media (max-width: 900px) {
+  .diesel-service-row,
+  .diesel-benefits-section {
+    grid-template-columns: 1fr;
+  }
+
+  .diesel-service-row--reverse
+  .diesel-service-row__image,
+  .diesel-service-row--reverse
+  .diesel-service-row__content {
+    order: initial;
+  }
+
+  .diesel-services-list {
+    gap: 70px;
+  }
+
+  .diesel-brands-grid {
+    grid-template-columns:
+      repeat(3, minmax(0, 1fr));
+  }
+
+  .diesel-cta {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 600px) {
+  .diesel-hero {
+    min-height: 380px;
+  }
+
+  .diesel-hero-content h1 {
+    font-size: 2.8rem;
+  }
+
+  .diesel-section {
+    width: min(100% - 28px, 1180px);
+    padding: 70px 0;
+  }
+
+  .diesel-service-row {
+    gap: 30px;
+  }
+
+  .diesel-service-row__image,
+  .diesel-service-row__image img,
+  .diesel-service-row__placeholder {
+    min-height: 280px;
+  }
+
+  .diesel-service-row__content {
+    padding: 0;
+  }
+
+  .diesel-brands-section {
+    padding: 70px 14px;
+  }
+
+  .diesel-brands-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .diesel-benefits-section {
+    width: min(100% - 28px, 1180px);
+    padding: 70px 0;
+  }
+
+  .diesel-location-card {
+    padding: 30px 24px;
+  }
+
+  .diesel-cta {
+    padding: 60px 20px;
+  }
+
+  .diesel-secondary-button {
+    width: 100%;
+  }
+}
+.diesel-introduction {
+  padding: 100px 0;
+  background: #ffffff;
+}
+
+.diesel-introduction__content {
+  width: min(
+    1180px,
+    calc(100% - 40px)
+  );
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(380px, 0.85fr);
+  gap: 75px;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.diesel-introduction__text > span {
+  display: inline-block;
+  margin-bottom: 15px;
+  color: #079ed8;
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 1.8px;
+}
+
+.diesel-introduction__text h2 {
+  margin: 0 0 25px;
+  color: #102f5b;
+  font-size: clamp(
+    2rem,
+    4vw,
+    3.2rem
+  );
+  line-height: 1.15;
+}
+
+.diesel-introduction__text p {
+  margin: 0 0 20px;
+  color: #5d6978;
+  font-size: 1.03rem;
+  line-height: 1.9;
+}
+
+.diesel-introduction__image {
+  min-height: 430px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 4px;
+  background:
+    linear-gradient(
+      135deg,
+      #edf1f4,
+      #d6dce2
+    );
+  color: #687687;
+  font-weight: 700;
+  text-align: center;
+}
+
+.diesel-contact-detail {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  margin-top: 18px;
+  color: #4c5b6d;
+}
+
+.diesel-contact-detail svg {
+  flex: 0 0 auto;
+  color: #079ed8;
+}
+
+.diesel-contact-detail a {
+  margin: 0;
+  color: #102f5b;
+  font-size: 1rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.diesel-contact-detail a:hover {
+  color: #079ed8;
+}
+
+@media (max-width: 900px) {
+  .diesel-introduction__content {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+
+  .diesel-introduction__image {
+    order: -1;
+    min-height: 350px;
+  }
+}
+
+@media (max-width: 600px) {
+  .diesel-introduction {
+    padding: 70px 0;
+  }
+
+  .diesel-introduction__content {
+    width: min(
+      100% - 28px,
+      1180px
+    );
+  }
+
+  .diesel-introduction__image {
+    min-height: 280px;
+  }
+}

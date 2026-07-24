@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useLocation } from "react-router-dom";
-
+import "../styles/contact.css";
 import {
   FaPhoneAlt,
   FaEnvelope,
@@ -32,6 +32,14 @@ function Contact() {
     message: initialMessage,
   });
 
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const [submitStatus, setSubmitStatus] = useState<
+    "success" | "error" | null
+  >(null);
+
+  const [submitMessage, setSubmitMessage] = useState("");
+
   const handleChange = (
     event: React.ChangeEvent<
       HTMLInputElement | HTMLTextAreaElement
@@ -45,25 +53,80 @@ function Contact() {
     }));
   };
 
-  const handleSubmit = (
+  const handleSubmit = async (
     event: React.FormEvent<HTMLFormElement>,
   ) => {
     event.preventDefault();
 
-    console.log("Datos del formulario:", formData);
+    setIsSubmitting(true);
+    setSubmitStatus(null);
+    setSubmitMessage("");
 
-    /*
-      Más adelante enviaremos estos datos al backend:
+    try {
+      const response = await fetch(
+        "http://localhost:3000/contact-request",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            nombre: formData.name.trim(),
+            empresa: formData.company.trim() || undefined,
+            correo: formData.email.trim(),
+            telefono: formData.phone.trim(),
+            mensaje: formData.productName
+              ? `Producto solicitado: ${formData.productName}\n\n${formData.message.trim()}`
+              : formData.message.trim(),
+          }),
+        },
+      );
 
-      {
-        name: formData.name,
-        company: formData.company,
-        email: formData.email,
-        phone: formData.phone,
-        productName: formData.productName,
-        message: formData.message
+      if (!response.ok) {
+        const errorResponse = await response.json().catch(() => null);
+
+        console.error(
+          "Respuesta del backend:",
+          errorResponse,
+        );
+
+        throw new Error(
+          "No fue posible enviar la solicitud",
+        );
       }
-    */
+
+      const savedRequest = await response.json();
+
+      console.log("Solicitud guardada:", savedRequest);
+
+      setSubmitStatus("success");
+
+      setSubmitMessage(
+        "Tu solicitud fue enviada correctamente. Nos pondremos en contacto contigo.",
+      );
+
+      setFormData({
+        name: "",
+        company: "",
+        email: "",
+        phone: "",
+        productName,
+        message: initialMessage,
+      });
+    } catch (error) {
+      console.error(
+        "Error al enviar la solicitud:",
+        error,
+      );
+
+      setSubmitStatus("error");
+
+      setSubmitMessage(
+        "No se pudo enviar la solicitud. Inténtalo nuevamente.",
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -190,8 +253,30 @@ function Contact() {
             required
           />
 
-          <button type="submit">
-            Solicitar información
+          {submitMessage && (
+            <p
+              className={`contact-submit-message ${
+                submitStatus === "success"
+                  ? "contact-submit-success"
+                  : "contact-submit-error"
+              }`}
+              role={
+                submitStatus === "success"
+                  ? "status"
+                  : "alert"
+              }
+            >
+              {submitMessage}
+            </p>
+          )}
+
+          <button
+            type="submit"
+            disabled={isSubmitting}
+          >
+            {isSubmitting
+              ? "Enviando..."
+              : "Solicitar información"}
           </button>
         </form>
       </div>
